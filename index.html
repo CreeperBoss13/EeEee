@@ -33,7 +33,7 @@
     </div>
 
     <div class="col-sm-9">
-      <h4><small>RECENT POSTS</small></h4>
+      <h4 id="welcome"><small>RECENT POSTS</small></h4>
       <hr>
       <h2>Movement 1 Drill Preview</h2>
       <h5>Brendan Grzanic <small>8/31/2023 5:19 PM</small></h5>
@@ -73,6 +73,14 @@
 <footer class="container-fluid">
   <p>Footer Text</p>
 </footer>
-
+<script>
+  if(localStorage.getItem("user")){
+    $("#welcome").text("Welcome back, " + localStorage.user);
+  }else{
+    var name = prompt("What is your name?");
+    localStorage.setItem("user", name);
+    $("#welcome").text("Welcome, " + localStorage.user);
+  }
+</script>
 </body>
 </html>
